@@ -25,29 +25,45 @@ h3 {
   color: white;
 }
 
-/* Poem Container */
+/* Poem Container Layout */
 .poem-container {
-  display: flex; /* Enables flexbox layout */
-  justify-content: space-around; /* Adds space between the poems */
-  flex-wrap: wrap; /* Ensures wrapping on smaller screens */
-  gap: 2%; /* Adds space between the poems */
-  margin: 0 auto;
-  max-width: 50%; /* Limits the total width of the container */
-  margin: 2%;
-}
-
-/* Poem Section */
-.poem {
-  background: rgba(27, 14, 37, 0.842);
-  font-style: italic;
-  font-size: 1.2em;
-  line-height: 1.8;
-  text-align: left;
-  width: 45%; /* Adjust the width of each poem */
-  min-width: 300px; /* Ensures poems don't shrink too small */
+  display: flex; /* Enables side-by-side layout */
+  justify-content: space-between; /* Spaces the poems out */
+  gap: 20px; /* Adds space between the poems */
+  flex-wrap: wrap; /* Allows wrapping when necessary */
   margin: 0 auto;
   padding: 20px;
+}
+
+/* Poem Section Styling */
+.poem {
+  background-color: rgba(27, 14, 37, 0.842);
   color: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.1em;
+  line-height: 1.8;
+  width: 45%; /* Adjusts the width of each poem */
+  min-width: 300px; /* Ensures poems don’t get too narrow */
+}
+
+.poem h2,
+.poem h3 {
+  color: #fff;
+}
+
+/* Responsive Design: Center poems vertically stacked on mobile */
+@media (max-width: 768px) {
+  .poem-container {
+    flex-direction: column; /* Stack the poems vertically on smaller screens */
+    align-items: center; /* Centers the poems */
+    gap: 30px; /* Adds space between poems when stacked */
+  }
+
+  .poem {
+    width: 90%; /* Makes the poems full width on smaller screens */
+    padding: 15px; /* Adjusts padding */
+  }
 }
 
 /* Carousel Styling */
