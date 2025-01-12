@@ -1,0 +1,63 @@
+<mat-toolbar color="primary">
+  <button
+    class="app-title"
+    mat-button
+    routerLink="/"
+    routerLinkActive=""
+    (click)="closeMenu()"
+  >
+    Time Explorer
+  </button>
+  <span class="spacer"></span>
+  <div class="nav-links">
+    <button mat-button routerLink="/contexts" routerLinkActive="active">
+      Contexts
+    </button>
+    <button mat-button routerLink="/engagement" routerLinkActive="active">
+      Engagement
+    </button>
+    <button mat-button routerLink="/artistic" routerLinkActive="active">
+      Artistic Expression
+    </button>
+    <button mat-button routerLink="/discussion" routerLinkActive="active">
+      Discussion
+    </button>
+  </div>
+  <button mat-icon-button class="mobile-menu" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+<div *ngIf="menuOpen" class="mobile-nav">
+  <button
+    mat-button
+    routerLink="/contexts"
+    routerLinkActive="active"
+    (click)="closeMenu()"
+  >
+    Contexts
+  </button>
+  <button
+    mat-button
+    routerLink="/engagement"
+    routerLinkActive="active"
+    (click)="closeMenu()"
+  >
+    Engagement
+  </button>
+  <button
+    mat-button
+    routerLink="/artistic"
+    routerLinkActive="active"
+    (click)="closeMenu()"
+  >
+    Artistic Expression
+  </button>
+  <button
+    mat-button
+    routerLink="/discussion"
+    routerLinkActive="active"
+    (click)="closeMenu()"
+  >
+    Discussion
+  </button>
+</div>

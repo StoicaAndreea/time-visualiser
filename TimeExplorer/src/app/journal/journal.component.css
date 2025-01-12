@@ -1,0 +1,213 @@
+.journal {
+  padding: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.example-list {
+  width: 500px;
+  max-width: 100%;
+  border: solid 1px #ccc;
+  min-height: 60px;
+  display: block;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.example-box {
+  padding: 20px 10px;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  font-size: 14px;
+  border-radius: 4px;
+  margin: 2px;
+}
+
+button {
+  margin: 5px 0;
+  color: #d1c4e9;
+  background-color: #4a148c;
+}
+
+button:hover {
+  background-color: #6a1b9a; /* A lighter shade on hover */
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Custom focus style */
+}
+
+.cdk-drag-preview {
+  border: none;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 16px;
+  gap: 16px; /* Space between cards */
+  justify-content: center;
+}
+
+.custom-card {
+  flex: 1 1 100%;
+  /*flex: 1 1 calc(50% - 16px); /* Make each card take up 50% width minus gap on larger screens */
+  /*max-width: 500px; /* Optional: limit the width of each card */
+  background: linear-gradient(90deg, #311b92, #512da8, #7e57c2);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 8px; /* Add margin around the cards */
+  overflow: hidden;
+}
+
+.custom-card mat-card-header {
+  color: white;
+}
+
+.custom-card mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.content-layer {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-opaque white */
+  padding: 16px; /* Add padding inside the content */
+  margin: 16px;
+  border-radius: 4px; /* Optional: slightly rounded edges */
+  color: black; /* Text remains visible on the white background */
+}
+
+@media (max-width: 600px) {
+  .custom-card {
+    flex: 1 1 100%; /* Cards take full width on smaller screens */
+  }
+}
+
+/* Define custom theme colors using CSS variables */
+:root {
+  --mat-primary: #311b92; /* Indigo */
+  --mat-accent: #512da8; /* Purple */
+  --mat-background: #d1c4e9; /* Light purple background */
+  --mat-text: #fff; /* White text */
+  --mat-button-bg: #4a148c; /* Dark purple button background */
+  --mat-button-text: #d1c4e9; /* Light text for buttons */
+}
+
+/* Full-width for the form field */
+.full-width {
+  width: 100%;
+}
+
+/* Styling the mat-form-field */
+mat-form-field {
+  width: 100%;
+  background-color: white; /* Light indigo background */
+  border-radius: 8px;
+  color: var(--mat-primary);
+}
+
+/* Label styling */
+mat-form-field .mat-form-field-label {
+  color: var(--mat-primary); /* Indigo color for label */
+  font-weight: bold;
+}
+
+/* Styling the input text area */
+textarea {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #311b92;
+}
+
+/* Focused state for label */
+mat-form-field.mat-focused .mat-form-field-label {
+  color: var(--mat-accent); /* Purple label when focused */
+}
+
+/* Focused state for the underline */
+mat-form-field.mat-focused .mat-form-field-underline {
+  background-color: var(--mat-accent); /* Purple underline */
+}
+
+/* Default underline color */
+mat-form-field .mat-form-field-underline {
+  background-color: var(--mat-primary); /* Indigo underline */
+}
+
+.mat-mdc-form-field-infix {
+  background-color: linear-gradient(90deg, #311b92, #512da8, #7e57c2);
+}
+
+/* Unordered list of entries styling */
+ul {
+  margin-top: 16px;
+  padding-left: 20px;
+}
+
+ul li {
+  color: var(--mat-text);
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.res li:nth-child(even) {
+  background-color: rgba(81, 45, 168, 0.1); /* Light purple for even entries */
+  color: black;
+}
+.res li:nth-child(odd) {
+  background-color: rgba(49, 27, 146, 0.1); /* Light indigo for odd entries */
+  color: black;
+}
+
+/* Optional: Customize the icon color in purple or indigo */
+mat-icon.matPrefix {
+  color: var(--mat-accent); /* Purple icon */
+}
+
+mat-icon.matSuffix {
+  color: var(--mat-accent); /* Purple icon */
+}
+
+@media screen and (max-width: 430px) {
+  mat-form-field {
+    margin: 10px 0;
+  }
+}

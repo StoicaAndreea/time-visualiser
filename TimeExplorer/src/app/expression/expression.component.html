@@ -1,0 +1,124 @@
+<div class="expression">
+  <h1>Artistic Expressions</h1>
+  <div class="colors">
+    <h3>
+      Click/hover over the color to find out what aspect of time it represents.
+    </h3>
+    <div class="card-container">
+      <div *ngFor="let card of colorCards" class="flip-card">
+        <div class="flip-card-inner">
+          <div
+            class="flip-card-front"
+            [ngStyle]="{ 'background-color': card.hex }"
+          ></div>
+          <div class="flip-card-back">
+            <p class="card-description">{{ card.adjective }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="poem-container">
+    <div class="poem">
+      <h2>Since Nine O'Clock</h2>
+      <h3>By C. P. Cavafy (1863-1933)</h3>
+      <p>
+        Half past twelve. The time has quickly passed<br />
+        since nine o'clock when I first turned up the lamp<br />
+        and sat down here. I've been sitting without reading,<br />
+        without speaking. With whom should I speak,<br />
+        so utterly alone within this house?
+      </p>
+      <p>
+        The apparition of my youthful body,<br />
+        since nine o'clock when I first turned up the lamp,<br />
+        has come and found me and reminded me<br />
+        of shuttered perfumed rooms<br />
+        and of pleasure spent—what wanton pleasure!<br />
+        And it also brought before my eyes<br />
+        streets made unrecognizable by time,<br />
+        bustling city centres that are no more<br />
+        and theatres and cafés that existed long ago.
+      </p>
+      <p>
+        The apparition of my youthful body<br />
+        came and also brought me cause for pain:<br />
+        deaths in the family; separations;<br />
+        the feelings of my loved ones, the feelings of<br />
+        those long dead which I so little valued.
+      </p>
+      <p>
+        Half past twelve. How the time has passed.<br />
+        Half past twelve. How the years have passed.
+      </p>
+    </div>
+
+    <div class="poem">
+      <h2>Blue River</h2>
+      <h3>By Ianthia</h3>
+      <p>
+        Borne by currents<br />
+        mighty and deep<br />
+        my skiff floats<br />
+        with precarious fervour<br />
+        wavering<br />
+        drowning almost<br />
+        summoned<br />
+        by the boundless, blue river
+      </p>
+      <p>
+        the water's salty<br />
+        near the dusking sea<br />
+        overflowing<br />
+        after a long night of rain<br />
+        carelessly ferrying<br />
+        my damaged vessel.....
+      </p>
+    </div>
+  </div>
+
+  <!-- <div class="carousel">
+    <div class="carousel-container" #carouselContainer>
+      <div
+        class="carousel-track"
+        [ngStyle]="{ transform: 'translateX(' + translateX + '%)' }"
+        (mouseenter)="pauseCarousel()"
+        (mouseleave)="startCarousel()"
+      >
+        <div
+          *ngFor="let image of uploadedImages; let i = index"
+          class="carousel-item"
+        >
+          <img [src]="image.url" [alt]="image.alt" class="carousel-image" />
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="carousel-button left"
+      (click)="prevSlide()"
+      aria-label="Previous slide"
+    >
+      &#8249;
+    </button>
+    <button
+      class="carousel-button right"
+      (click)="nextSlide()"
+      aria-label="Next slide"
+    >
+      &#8250;
+    </button>
+  </div> -->
+
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/SHNmOQUJNBM?si=mJhaC7Hv2XR-L6ld"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>

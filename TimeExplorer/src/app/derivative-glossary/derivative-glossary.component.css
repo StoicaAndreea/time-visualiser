@@ -1,0 +1,90 @@
+.derivatives {
+  margin: 5%;
+  color: white;
+}
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 5%;
+}
+
+.carousel-container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  -webkit-transition: transform 0.5s ease-in-out;
+  -moz-transition: transform 0.5s ease-in-out;
+  -ms-transition: transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+}
+
+.custom-card {
+  flex: 0 0 100%; /* Each card takes up the full width of the carousel */
+  box-sizing: border-box;
+  margin: 0; /* Remove margins to ensure proper alignment */
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1%;
+}
+
+.carousel-button {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  margin: 0 10px;
+}
+
+.carousel-button.left,
+.carousel-button.right {
+  display: inline-block;
+}
+
+.carousel-button:focus {
+  outline: 2px solid #bdabe9;
+}
+
+@media (max-width: 768px) {
+  .custom-card {
+    flex: 0 0 100%; /* Ensure cards still take full width on small screens */
+  }
+
+  .carousel-button {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
+}
+
+.custom-card {
+  background: linear-gradient(90deg, #311b92, #512da8, #7e57c2);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card mat-card-header {
+  color: white;
+}
+
+.content-layer {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-opaque white */
+  color: black; /* Text remains visible */
+  margin: 10px;
+}

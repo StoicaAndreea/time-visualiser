@@ -1,0 +1,352 @@
+.contexts {
+  position: relative;
+  z-index: 2; /* Ensure it appears above the mask and circles */
+  background: rgba(27, 14, 37, 0.796); /* Semi-transparent background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+  padding: 1%;
+  margin: 4%;
+  color: white;
+}
+mat-tab-group {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.time-dimension {
+  font-family: "Arial", sans-serif;
+  color: #ffffff;
+  background: linear-gradient(90deg, #311b92, #512da8, #7e57c2);
+  padding: 30px;
+  text-align: center;
+  margin: 20px auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.time-dimension h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.spacetime-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.spacetime-visual {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(90deg, #311b92, #512da8, #7e57c2);
+  border-radius: 50%;
+  overflow: hidden;
+  animation: rotate 20s linear infinite;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 5px,
+      transparent 5px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 5px,
+      transparent 5px,
+      transparent 10px
+    );
+}
+
+.particle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: moveParticle 5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveParticle {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(100px, 0);
+  }
+  50% {
+    transform: translate(100px, 100px);
+  }
+  75% {
+    transform: translate(0, 100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+button {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3498db;
+}
+
+p {
+  color: white;
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  background: #000; /* Background for visibility */
+  margin: 0 auto 0; /* Center and add margin below */
+  display: flex;
+  justify-content: center; /* Ensure iframe is centered */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.time-sequence {
+  background: linear-gradient(120deg, #311b92, #512da8, #7e57c2);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px auto;
+}
+
+.timeline {
+  width: 80%;
+  border-left: 2px solid white;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline-event {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.event-circle {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: -7px;
+  top: 5px;
+}
+
+.event-details {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: white;
+  text-align: left;
+}
+
+.event-details h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.current-time-section {
+  background: linear-gradient(120deg, #311b92, #512da8, #7e57c2);
+
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.time-display p {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.time-display h3 {
+  font-size: 2em;
+  margin-top: 5px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.time-reversible-container {
+  background: linear-gradient(120deg, #311b92, #512da8, #7e57c2);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.moment-control button {
+  font-size: 1.5em;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: none;
+  background: #512da8;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.moment-control button:hover {
+  background-color: #7e57c2;
+}
+
+.moment-display p {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+.actions button {
+  background: #311b92;
+  color: white;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #5c6bc0;
+}
+
+/* Container for the draggable object */
+.example-boundary {
+  width: 100%;
+  height: 500px;
+  border: 2px dashed #6a1b9a; /* Creates a boundary where time can be manipulated */
+  position: relative;
+  overflow: hidden;
+}
+
+.example-box {
+  padding: 20px;
+  background: linear-gradient(120deg, #311b92, #512da8, #7e57c2);
+  border: 1px solid #7e57c2;
+  border-radius: 8px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-align: center;
+}
+
+.time-object {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7e57c2;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+  cursor: grab;
+  user-select: none;
+}
+
+.time-ceases-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.time-ceases {
+  background: #f5f5f5;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.time-ceases button {
+  background-color: #311b92;
+  color: white;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.time-ceases button:hover {
+  background-color: #512da8;
+}

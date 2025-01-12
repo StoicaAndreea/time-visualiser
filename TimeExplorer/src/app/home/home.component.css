@@ -1,0 +1,170 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+  background-color: #121212; /* Example background color */
+}
+
+.home {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.context {
+  position: relative;
+  z-index: 2; /* Ensure it appears above the mask and circles */
+  padding: 2rem; /* Add padding for spacing */
+  background: rgba(27, 14, 37, 0.842); /* Semi-transparent background */
+  border-radius: 12px; /* Rounded corners for the background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+  max-width: 80%; /* Prevent it from getting too wide */
+  margin: 2.5% auto 10%; /* Center horizontally and add margin from the top */
+}
+
+.context .txt-time {
+  font-size: 2rem; /* Adjusted for readability */
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.context .txt-greetings {
+  font-size: 1.2rem; /* Adjusted for readability */
+  margin-bottom: 1.5rem;
+}
+
+p {
+  margin: 0; /* Ensure no extra space */
+}
+
+.area {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  overflow: hidden; /* Prevent elements from overflowing the viewport */
+  z-index: 1; /* Ensure circles are behind the context */
+}
+
+.circles {
+  position: absolute;
+  top: 0; /* Position the circles at the top of the page */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent circles from overflowing */
+  pointer-events: none;
+  z-index: 1; /* Keep behind the content */
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 2rem; /* Convert vh to rem for better scaling */
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 25s linear infinite;
+  top: -10%; /* Ensure circles animate starting from the top */
+}
+
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 8rem;
+  height: 8rem;
+  animation-delay: 0s;
+  background-color: #f06292;
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 2rem;
+  height: 2rem;
+  animation-delay: 2s;
+  animation-duration: 12s;
+  background-color: #1e88e5;
+}
+
+/* Repeat adjustments for other circles as needed */
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    /*Circlesmovedownthepage*/
+    opacity: 0.2;
+    border-radius: 50%;
+    -webkit-transform: translateY(100vh) rotate(720deg);
+    -moz-transform: translateY(100vh) rotate(720deg);
+    -ms-transform: translateY(100vh) rotate(720deg);
+    -o-transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+/* Add media queries for smaller screens */
+@media (max-width: 768px) {
+  .context {
+    margin: 10% auto 10%; /* Center horizontally and add margin from the top */
+  }
+
+  .context .txt-time {
+    font-size: 2rem; /* Adjust for smaller screens */
+  }
+  .context .txt-greetings {
+    font-size: 0.8rem;
+  }
+  .circles li {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.engage {
+  font-family: "Arial", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.8;
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 2% auto;
+  margin-left: 15%;
+  margin-right: 15%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 2%;
+}
+
+.engage a {
+  color: white; /* Link color */
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  display: inline;
+  padding: 2px;
+  text-decoration: dotted;
+}
+
+.engage a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+@media (max-width: 768px) {
+  .engage {
+    font-size: 1em; /* Adjust font size for smaller screens */
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .engage {
+    font-size: 0.9em; /* Further reduce font size */
+    padding: 10px;
+  }
+}

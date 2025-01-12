@@ -1,0 +1,47 @@
+<div class="derivatives">
+  <h2>Derivative Forms of Time</h2>
+  <div class="carousel">
+    <div class="carousel-container" #carouselContainer>
+      <div
+        class="carousel-track"
+        [ngStyle]="{ transform: 'translateX(' + translateX + '%)' }"
+        (mouseenter)="pauseCarousel()"
+        (mouseleave)="startCarousel()"
+      >
+        <mat-card
+          fxFlex="auto"
+          class="custom-card"
+          *ngFor="let card of cards; let i = index"
+        >
+          <mat-card-header>
+            <mat-card-title>
+              <h2 tabindex="0">{{ card.word }}</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="content-layer">
+            <p>
+              {{ card.definition }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <!-- Navigation Controls -->
+  <div class="carousel-controls">
+    <button
+      class="carousel-button left"
+      (click)="prevSlide()"
+      aria-label="Previous slide"
+    >
+      &#8249;
+    </button>
+    <button
+      class="carousel-button right"
+      (click)="nextSlide()"
+      aria-label="Next slide"
+    >
+      &#8250;
+    </button>
+  </div>
+</div>

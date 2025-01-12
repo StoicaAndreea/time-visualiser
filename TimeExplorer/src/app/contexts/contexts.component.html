@@ -1,0 +1,138 @@
+<app-derivative-glossary></app-derivative-glossary>
+
+<div class="contexts">
+  <h2>Contexts of Time</h2>
+  <mat-tab-group>
+    <mat-tab *ngFor="let context of contexts" [label]="context.title">
+      <div>
+        <p>{{ context.description }}</p>
+
+        <!-- Show the time-dimension only when the context is scientific -->
+        <div *ngIf="isContext(context, 'scientific')">
+          <div class="time-dimension">
+            <h2>Time as a Dimension:</h2>
+            <p>watch this particle move</p>
+            <div class="spacetime-container">
+              <div class="spacetime-visual">
+                <div class="grid"></div>
+                <div class="particle"></div>
+              </div>
+              <button (click)="toggleAnimation()">Pause/Play Animation</button>
+            </div>
+          </div>
+        </div>
+        <!-- Show the time-dimension only when the context is Philosophical -->
+        <div *ngIf="isContext(context, 'philosophical')">
+          <div class="time-dimension">
+            <div class="video-container">
+              <iframe
+                src="https://www.youtube.com/embed/iCgDFDtWagI?si=iaP8EZcvH0XcccFS"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="isContext(context, 'everyday')">
+          <div class="time-sequence">
+            <h2>The Flow of Time</h2>
+            <div class="timeline-container">
+              <div class="timeline">
+                <div
+                  *ngFor="let event of timeEvents; let i = index"
+                  class="timeline-event"
+                >
+                  <div class="event-circle"></div>
+                  <div class="event-details">
+                    <h3>Event {{ i + 1 }}</h3>
+                    <p>{{ event.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button (click)="addEvent()">Add a Moment</button>
+            <button (click)="resetTimeline()">Reset Timeline</button>
+          </div>
+          <!-- "What time is it?" Section -->
+          <div class="current-time-section">
+            <h2>What Time Is It?</h2>
+            <div class="time-display">
+              <p>The current time is:</p>
+              <h3>{{ currentTime }}</h3>
+            </div>
+            <button (click)="updateCurrentTime()">Refresh Time</button>
+          </div>
+        </div>
+
+        <div *ngIf="isContext(context, 'improbable')">
+          <div class="time-reversible-container">
+            <div class="moment-control">
+              <button (click)="rewindTime()">⏪ Rewind</button>
+              <button (click)="fastForwardTime()">⏩ Fast Forward</button>
+            </div>
+
+            <div class="moment-display">
+              <p>{{ momentDescription }}</p>
+            </div>
+
+            <div class="actions">
+              <button (click)="resetTime()">Reset</button>
+            </div>
+          </div>
+          <div class="time-dimension">
+            <p>
+              I recommend you watch this movie. It is one of my favorites ;)
+            </p>
+            <div class="video-container">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/YRSBiTF3wNw?si=QxiZ8wgQ8lMfixjA"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="isContext(context, 'impossible')">
+          <div class="example-boundary">
+            <div
+              class="example-box"
+              cdkDragBoundary=".example-boundary"
+              cdkDrag
+            >
+              <h2>Time as a Tangible Object</h2>
+              <p>
+                Move the "time" around to manipulate it as a physical object.
+                What happens when time becomes something you can hold?
+              </p>
+              <div class="time-object" cdkDrag>
+                <p>🕰️ Time</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="time-ceases-container">
+            <div class="time-ceases" *ngIf="timeCeasesExist">
+              <h2>Time Ceases to Exist</h2>
+              <p>
+                Imagine a world where time has no passage. How would life look
+                in an eternal now?
+              </p>
+              <button (click)="toggleTimeExistence()">
+                Click to experience timelessness
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

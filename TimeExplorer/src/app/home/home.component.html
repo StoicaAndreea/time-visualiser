@@ -1,0 +1,39 @@
+<div class="home">
+  <div class="context">
+    <p class="txt-time" aria-live="polite">{{ time | date : "mediumTime" }}</p>
+    <p class="txt-greetings">{{ msg }}</p>
+    <app-analog-clock></app-analog-clock>
+    <h3>{{ quote }}</h3>
+    <h1>Welcome to Time Explorer</h1>
+    <p class="engage">
+      Would you like to explore
+      <a mat-button routerLink="/contexts" routerLinkActive="active"
+        >what time represents in different contexts,</a
+      >
+      <a mat-button routerLink="/engagement" routerLinkActive="active"
+        >reflect on what time means to you,</a
+      >
+      <a mat-button routerLink="/artistic" routerLinkActive="active"
+        >feel time through artistic expression,</a
+      >
+      <a mat-button routerLink="/discussion" routerLinkActive="active"
+        >or find out what time means to different cultures?</a
+      >
+    </p>
+  </div>
+</div>
+
+<div class="area" aria-hidden="true">
+  <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>

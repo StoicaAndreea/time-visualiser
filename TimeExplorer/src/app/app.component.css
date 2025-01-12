@@ -1,0 +1,91 @@
+.background-container {
+  background: url("../assets/images/background.webp") no-repeat center center;
+  background-size: cover; /* Stretches to fit the width while maintaining aspect ratio */
+  background-attachment: fixed; /* Keeps the image fixed while scrolling */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Optional fallback color if the image doesn't load */
+  opacity: 1; /* Adjust transparency if needed */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensures it covers the full viewport height */
+  display: flex; /* Optional: Useful for centering content vertically if needed */
+  flex-direction: column;
+}
+
+/* Ensure the entire page takes the full height */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; /* Ensures that the container takes the full height */
+}
+
+.main-content {
+  flex-grow: 1; /* Takes up the remaining space, pushing the footer down */
+}
+
+/* Footer styles */
+.footer {
+  background-color: #121212;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #f06292;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links a {
+    margin-bottom: 10px;
+  }
+
+  .footer-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 15px 0;
+  }
+
+  .footer-content p {
+    font-size: 0.8rem;
+  }
+}
